@@ -1,0 +1,88 @@
+body {
+    background-image: url("/images/Section.png");
+    font-family: Inter, sans-serif;
+    color: white;
+
+}
+
+.navv-container {
+    background: linear-gradient(to bottom, #020202, #161616);
+    display: flex;
+    align-items: center;
+    border: 0.5px solid #717171;
+    border-radius: 10px;
+    margin: 24px;
+}
+
+.navv-logo {
+    background-color: #D9FC67;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-left: 32px;
+    margin-right: 12px;
+}
+
+.navv-name {
+    color: white;
+    font-size: 18px;
+    margin-right: auto;
+}
+
+button {
+    width: 157px;
+    height: 40px;
+    background-color: #D9FC67;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E8FEA0;
+}
+
+.main--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main--container > .header > h1 {
+    text-align: center;
+    font-size: 51px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.main--form {
+    background: linear-gradient(to bottom, #020202, #161616);
+    display: flex;
+    align-items: center;
+    border: 0.5px solid #717171;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.main--form > form {
+    text-align: center;
+    margin: 20px 50px;
+}
+
+.h4--blacklist {
+    margin-top: 40px;
+}
+
+.main--button {
+    margin: 0;
+    margin-top: 45px;
+}
+
+#joke {
+    font-size: 18px;
+    margin-top: 30px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Joke API Project</title>
+</head>
+
+<script>
+  async function fetchJoke(event) {
+    event.preventDefault(); // Prevent the default button action
+    
+    const jokeType = document.querySelector('input[name="jokeType"]:checked').value;
+    const blacklistFlags = Array.from(document.querySelectorAll('input[name="blacklistFlags"]:checked'))
+                                .map(flag => flag.value);
+
+    const url = `/get-joke?type=${jokeType}&blacklistFlags=${blacklistFlags.join(',')}`;
+
+    try {
+      const response = await fetch(url);
+      const joke = await response.json();
+
+      if (joke.type === 'single') {
+        document.getElementById('joke').innerText = joke.joke;
+      } else if (joke.type === 'twopart') {
+        document.getElementById('joke').innerText = `${joke.setup} - ${joke.delivery}`;
+      }
+    } catch (error) {
+      document.getElementById('joke').innerText = 'Failed to fetch joke.';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('jokeButton').addEventListener('click', fetchJoke);
+  });
+</script>
+
+<body>
+    <!-- HEADER-->
+     <div class="navv-container">
+        <div class="navv-logo"></div>
+        <div class="navv-name">
+            <h3>Joke API</h3>
+        </div>
+        <div class="navv-button">
+            <button>SIGN UP</button>
+        </div>
+     </div>
+
+
+     <!-- MAIN -->
+    <div class="main--container">
+        <div class="header">
+            <h1>Generate a Joke</h1>
+        </div>
+        <div class="main--form">
+            <form action="/get-joke">
+              <h2>Select Joke Type:</h2>
+              <label><input type="radio" name="jokeType" value="Programming" checked> Programming</label>
+              <label><input type="radio" name="jokeType" value="Pun"> Pun</label>
+              <label><input type="radio" name="jokeType" value="Spooky"> Spooky</label>
+              <label><input type="radio" name="jokeType" value="Misc"> Misc</label>
+              <label><input type="radio" name="jokeType" value="Dark"> Dark</label>
+              <label><input type="radio" name="jokeType" value="Christmas"> Christmas</label>
+
+              <h2>Select Blacklist Flags:</h2>
+              <label><input type="checkbox" name="blacklistFlags" value="nsfw"> NSFW</label>
+              <label><input type="checkbox" name="blacklistFlags" value="religious"> Religious</label>
+              <label><input type="checkbox" name="blacklistFlags" value="political"> Political</label>
+              <label><input type="checkbox" name="blacklistFlags" value="racist"> Racist</label>
+              <label><input type="checkbox" name="blacklistFlags" value="sexist"> Sexist</label>
+              <label><input type="checkbox" name="blacklistFlags" value="explicit"> Explicit</label>
+
+                <div>
+                    <button class="main--button" type="submit" id="jokeButton">GENERATE JOKE</button>
+                    <p id="joke"></p>
+                </div>
+            </form>
+         </div>
+     </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Joke API Project</title>
+</head>
+<body>
+    <!-- HEADER-->
+     <div class="navv-container">
+        <a href="./index.html"><div class="navv-logo"></div></a>
+        <div class="navv-name">
+            <h3>Joke API</h3>
+        </div>
+        <div class="navv-button">
+            <button>SIGN UP</button>
+        </div>
+     </div>
+
+
+     <!-- MAIN -->
+    <div class="main--container">
+        <div class="header">
+            <h1>Generate a Joke</h1>
+        </div>
+        <div class="main--form">
+            <form action="GET">
+                <h4>Select category / categories:</h4>
+                  <input type="checkbox" id="cbprogramming">
+                    <label for="cbprogramming">Programming</label>
+                  <input type="checkbox" id="cbmusic">
+                    <label for="cbmusic">Music</label>
+                  <input type="checkbox" id="cbdark">
+                    <label for="cbdark">Dark</label>
+                  <input type="checkbox" id="cbpun">
+                    <label for="cbpun">Pun</label>
+                  <input type="checkbox" id="cbspooky">
+                    <label for="cbspooky">Spooky</label>
+                  <input type="checkbox" id="cbchristmas">
+                    <label for="cbchristmas">Christmas</label>
+
+                <h4>Select flags to blacklist:</h4>
+                  <input type="checkbox" id="cbnsfw">
+                    <label for="cbnsfw">NSFW</label>
+                  <input type="checkbox" id="cbreligious">
+                    <label for="cbreligious">Religious</label>
+                  <input type="checkbox" id="cbpolitical">
+                    <label for="cbpolitical">Political</label>
+                  <input type="checkbox" id="cbracist">
+                    <label for="cbracist">Racist</label>
+                  <input type="checkbox" id="cbsexist">
+                    <label for="cbsexist">Sexist</label>
+                  <input type="checkbox" id="cbexplicit">
+                    <label for="cbexplicit">Explicit</label>
+                
+            </form>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
